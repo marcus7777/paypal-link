@@ -1,0 +1,47 @@
+<link rel="import" href="../polymer/polymer.html">
+<!--
+  `<paypal-link></paypal-link>` make a paypal link see demo
+  @demo demo.html
+-->
+<dom-module id="paypal-link">
+  <template>
+    <a href="{{link}}" ><content></content></a>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "paypal-link",
+    properties:{
+      link:{
+        computed:"getLink(pay,reference,amount,itemName,payer,noShipping,currencyCode,lang)",
+      },
+      noShipping:{
+        value:1,
+        type:Number,
+      },
+      reference:{
+        type:String,
+        value:"",
+      },
+      payer:{
+        type:String,
+        value:"",
+      },
+      lang:{
+        type:String,
+        value:"EN",
+      },
+      pay:{
+      },
+      currencyCode:{
+      },
+      itemName:{
+      },
+      amount:{
+      },
+    },
+    getLink: function(pay,reference,amount,itemName,payer,noShipping,currencyCode,lang){
+      return "https://www.paypal.com/cgi-bin/webscr?on0=Payer&os0="+payer+"&on1=Reference&os1="+reference+"&amount="+amount+"&item_name="+itemName+"&cmd=_xclick&business="+pay+"&no_shipping="+noShipping+"&currency_code="+currencyCode+"&lc="+lang
+    },
+  })
+</script>
