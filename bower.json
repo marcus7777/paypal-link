@@ -1,0 +1,13 @@
+{
+  "name": "paypal-link",
+  "version": "1.0.0",
+  "description": "make a paypal link see demo",
+  "main": "paypal-link.html",
+  "keywords": [
+    "polymer",
+    "web-components"
+  ],
+  "dependencies": {
+    "polymer": "*"
+  }
+}
